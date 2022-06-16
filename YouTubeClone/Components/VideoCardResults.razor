@@ -1,0 +1,47 @@
+﻿
+<MudGrid>
+    <MudItem md="5">
+        <MudImage Fluid="true" Src="@this.CoverImage" Alt="Swedish Farm House" Class="rounded-lg"/>
+    </MudItem>
+    <MudItem md="7">
+        <MudText Typo="Typo.h6" GutterBottom="true">@this.Title</MudText>
+        <MudGrid Class="mb-1">
+            <MudItem md="1">
+                <MudAvatar Image="@this.ChannelImage" Alt="Channel image"/>
+            </MudItem>
+            <MudItem md="2">
+                <MudText Style="color: #757575;">@this.ChannelName</MudText>
+            </MudItem>
+        </MudGrid>
+        <MudText Class="mb-1" Style="color: #757575;">@this.Views</MudText>
+        <MudText Class="mb-1" Style="color: #757575;">@this.Difference</MudText>
+        <MudText Class="mb-1" Style="color: #757575;">@(string.Join("", this.Description.Take(250).ToList()) + "...")</MudText>
+        <MudChip Label="true" Color="Color.Dark">@this.Duration</MudChip>
+    </MudItem>
+</MudGrid>
+
+@code {
+    [Parameter]
+    public string CoverImage { get; set; }
+
+    [Parameter]
+    public string Title { get; set; }    
+
+    [Parameter]
+    public string ChannelImage { get; set; }
+
+    [Parameter]
+    public string ChannelName { get; set; }     
+
+    [Parameter]
+    public string Views { get; set; }
+
+    [Parameter]
+    public string Difference { get; set; }
+
+    [Parameter]
+    public string Duration { get; set; }
+
+    [Parameter]
+    public string Description { get; set; }
+}
