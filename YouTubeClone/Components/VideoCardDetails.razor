@@ -1,0 +1,33 @@
+﻿
+<MudGrid>
+    <MudItem md="5">
+        <MudImage Fluid="true" Style="height: 100% !important;" Src="@this.CoverImage" Alt="Swedish Farm House" Class="rounded-lg"/>
+    </MudItem>
+    <MudItem md="7">
+        <MudText Style="font-weight: bold;">@this.Title</MudText>
+        <MudText Style="color: #757575;">@this.ChannelName</MudText>
+        <MudText Style="color: #757575;">@this.Views</MudText>
+        <MudText Style="color: #757575;">@this.Difference</MudText>
+        <MudChip Label="true" Color="Color.Dark">@this.Duration</MudChip>
+    </MudItem>
+</MudGrid>
+
+@code {
+    [Parameter]
+    public string CoverImage { get; set; }
+
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public string ChannelName { get; set; }     
+
+    [Parameter]
+    public string Views { get; set; }
+
+    [Parameter]
+    public string Difference { get; set; }
+
+    [Parameter]
+    public string Duration { get; set; }
+}

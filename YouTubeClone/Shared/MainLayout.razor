@@ -5,8 +5,8 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Color="Color.Transparent" Elevation="0">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+    <MudAppBar Style="background-color: white !important" Elevation="0">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
         <MudTextField @bind-Value="Text" @onfocus="this.Open" Label="Search" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
 
         <MudPopover Class="px-4 pt-4" Open="@isOpen" AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopCenter">
@@ -20,10 +20,10 @@
 
         <MudSpacer />
 
-        <MudIconButton Icon="@Icons.Filled.VideoCameraFront" Color="Color.Inherit" Size="Size.Large" />
-        <MudIconButton Icon="@Icons.Filled.Apps" Color="Color.Inherit" Size="Size.Large" />
-        <MudIconButton Icon="@Icons.Filled.Notifications" Color="Color.Inherit" Size="Size.Large" />
-        <MudAvatar Class="ml-4" Size="Size.Medium" Color="Color.Primary">A</MudAvatar>
+        <MudIconButton Icon="@Icons.Filled.VideoCameraFront" Size="Size.Large" />
+        <MudIconButton Icon="@Icons.Filled.Apps" Size="Size.Large" />
+        <MudIconButton Icon="@Icons.Filled.Notifications" Size="Size.Large" />
+        <MudAvatar Image="https://i.ytimg.com/vi/joD8c2oM3HU/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbbyo_-07QhQXPKK9hZE93RrYNBg" Class="ml-4" Size="Size.Medium"></MudAvatar>
     </MudAppBar>
     <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
         <MudGrid>
