@@ -23,7 +23,22 @@
         <MudIconButton Icon="@Icons.Filled.VideoCameraFront" Size="Size.Large" />
         <MudIconButton Icon="@Icons.Filled.Apps" Size="Size.Large" />
         <MudIconButton Icon="@Icons.Filled.Notifications" Size="Size.Large" />
-        <MudAvatar Image="https://i.ytimg.com/vi/joD8c2oM3HU/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbbyo_-07QhQXPKK9hZE93RrYNBg" Class="ml-4" Size="Size.Medium"></MudAvatar>
+
+        <MudMenu FullWidth="true">
+            <ActivatorContent>
+                <MudAvatar Image="https://i.ytimg.com/vi/joD8c2oM3HU/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbbyo_-07QhQXPKK9hZE93RrYNBg" Class="ml-4" Size="Size.Medium"></MudAvatar>
+            </ActivatorContent>
+            <ChildContent>
+                <MudMenuItem OnClick="this.NavigateToProfile">
+                    <MudIcon Icon="@Icons.Filled.Person"></MudIcon>
+                    Profile
+                </MudMenuItem>
+                <MudMenuItem OnClick="this.SignOut">
+                    <MudIcon Icon="@Icons.Filled.Logout"></MudIcon>
+                    Sign Out
+                </MudMenuItem>
+            </ChildContent>
+        </MudMenu>
     </MudAppBar>
     <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
         <MudGrid>
@@ -64,5 +79,15 @@
     private void Close()
     {
         this.isOpen = false;
-    } 
+    }
+
+    private void NavigateToProfile()
+    {
+        this.navigationManager.NavigateTo("/profile");
+    }
+
+    private void SignOut()
+    {
+        
+    }
 }
